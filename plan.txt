@@ -1,0 +1,33 @@
+# Research Paper Analysis Agent
+
+An AI-powered research assistant that analyzes academic papers and generates structured insights from one or multiple research documents.
+
+The system combines Retrieval-Augmented Generation (RAG) with Agentic AI workflows to help users quickly understand complex research papers without reading them in full.
+
+Users can upload one or more papers and ask questions such as:
+
+* Summarize this paper.
+* What methodology was used?
+* What are the main findings?
+* What limitations were identified?
+* Compare these two papers.
+
+The agent extracts relevant sections, retrieves supporting evidence from the uploaded documents, and generates concise, structured responses with references to the original content.
+
+### Key Features
+
+* Research paper summarization
+* Methodology extraction
+* Key findings analysis
+* Limitation identification
+* Multi-paper comparison
+* Literature review support
+* Source-backed responses
+
+### Technologies
+
+Python, FastAPI, LangGraph, Vector Database (FAISS/ChromaDB), LLM APIs, RAG Pipeline
+
+### Business Value
+
+Helps researchers, students, analysts, and professionals accelerate literature review, identify important insights, and compare research findings efficiently.
