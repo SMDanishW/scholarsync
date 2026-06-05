@@ -1,4 +1,4 @@
-# Research Portal 2.0
+# Scholarsync
 
 An AI-powered research paper analysis tool. Upload up to 5 PDF papers per conversation, ask questions in natural language, and get answers grounded strictly in your uploaded documents — complete with inline citations, PDF highlighting, and a transparent agent trace for every response.
 
@@ -137,21 +137,6 @@ npm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000).
-
-### 4. Sharing via ngrok
-
-The frontend proxies all `/api/*` calls to the local backend through Next.js rewrites, so you only need **one ngrok tunnel** on port 3000. The backend never needs to be exposed publicly.
-
-```bash
-# Install ngrok if you haven't: https://ngrok.com/download
-ngrok http 3000
-```
-
-Share the `https://xxxx.ngrok-free.app` URL with testers. No environment variables need to change between sessions.
-
-> **Note:** On the free ngrok tier, visitors see a browser warning page on first load. They can click "Visit Site" to proceed. This only appears once per session.
-
----
 
 ## How It Works
 
