@@ -39,7 +39,8 @@ def build_synthesis_prompt(intent: str, query: str, chunks: List[Dict]) -> List[
         )
     else:
         context_parts = [
-            f"[Source: {c['paper_name']} | Page {c['page_number']} | {c['section_heading']}]\n{c['text']}"
+            f"[Source: {c['paper_name']} | Page {c['page_number']} | {c['section_heading']}]\n"
+            + (c['text'][:500].rstrip() + "…" if len(c['text']) > 500 else c['text'])
             for c in chunks
         ]
         context = "\n\n---\n\n".join(context_parts)

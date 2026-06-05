@@ -63,9 +63,12 @@ def guardrail_agent(response: str, chunks: List[Dict]) -> Dict:
         },
     ]
 
-    # max_tokens must be generous enough to reproduce the full corrected_response
-    # inside the JSON document without Groq cutting it off mid-generation.
-    raw = chat_completion(messages, json_mode=True, max_tokens=4096)
+    # Dynamically size output budget: guardrail must reproduce the full response in JSON.
+    # Rough token estimate (4 chars ≈ 1 token); leave 200 tokens for system prompt overhead.
+    # Keep total (input + output) under 5800 to stay clear of the 6000 TPM ceiling.
+    estimated_input_tokens = (len(excerpts) + len(response)) // 4 + 200
+    max_output_tokens = max(512, min(3000, 5800 - estimated_input_tokens))
+    raw = chat_completion(messages, json_mode=True, max_tokens=max_output_tokens)
 
     try:
         result = json.loads(raw)

@@ -65,7 +65,7 @@ def chat(
 
     # ── Synthesis (non-streaming so guard rail can inspect the full response) ────
     synthesis_messages = build_synthesis_prompt(intent, request.message, chunks)
-    raw_response: str = chat_completion(synthesis_messages)
+    raw_response: str = chat_completion(synthesis_messages, max_tokens=2000)
 
     # ── Guard rail check ─────────────────────────────────────────────────────────
     guard = guardrail_agent(raw_response, chunks)
