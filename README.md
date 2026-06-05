@@ -1,4 +1,4 @@
-# Research Portal 2.0
+# Scholarsync
 
 An AI-powered research paper analysis tool. Upload up to 5 PDF papers per conversation, ask questions in natural language, and get answers grounded strictly in your uploaded documents — complete with inline citations, PDF highlighting, and a transparent agent trace for every response.
 
